@@ -10,7 +10,7 @@
   <body>
 
     <header class="main-header">
-      <nav class="main-navbar">
+      <nav class="main-logo">
         <div class="logo">
           <img src="./images/logoipsum-logo-13.svg" alt="CommonSense Logo" />
         </div>
@@ -19,38 +19,67 @@
         </div>
       </nav>
 
-    <div class="main-content">
-    <section class="friends"></section>
-    <section class="messages">
-      <div class="add-new-message">
-        <input
-          type="text"
-          class="input-text"
-          id="input-text"
-          placeholder="Scrivi il tuo messaggio"
-        />
-        <input
-          type="text"
-          class="input-sender"
-          id="input-sender"
-          placeholder="Chi sei?"
-        />
-        <button class="add-new-message-btn">Post!</button>
-      </div>
       <div class="filter">
         <input
           type="text"
           class="filter-input"
           id="filter-input"
-          placeholder="Ricerca..."
+          placeholder="Trova messaggi..."
         />
       </div>
-      <div class="messages-list"></div>
-    </section>
-    <section class="empty"></section>
-    <script src="./script.js" type="module"></script>
-    <script src="./utils.js" type="module"></script>
-    <script src="./api.js" type="module"></script>
-  </div>
+    </header>
+
+    <div class="main-content">
+      <section class="friends"></section>
+      <section class="messages">
+        <div class="add-new-message">
+          <input
+            type="text"
+            class="input-text"
+            id="input-text"
+            placeholder="Scrivi il tuo messaggio"
+          />
+          <input
+            type="text"
+            class="input-sender"
+            id="input-sender"
+            placeholder="Inserisci il tuo nome"
+          />
+        </div>
+
+        <button class="add-new-message-btn">Posta il contenuto!</button>
+
+        <div class="messages-list"></div>
+      </section>
+      <section class="gallery">
+        <img src="https://picsum.photos/200/300?1" alt="photo1">
+        <img src="https://picsum.photos/200/300?2" alt="photo2">
+        <img src="https://picsum.photos/200/300?3" alt="photo3">
+        <img src="https://picsum.photos/200/300?4" alt="photo4">
+        <img src="https://picsum.photos/200/300?5" alt="photo5">
+        <img src="https://picsum.photos/200/300?6" alt="photo6">
+        <img src="https://picsum.photos/200/300?7" alt="photo7">
+        <img src="https://picsum.photos/200/300?8" alt="photo8">
+        <img src="https://picsum.photos/200/300?9" alt="photo9">
+        <img src="https://picsum.photos/200/300?10" alt="photo10">
+        <img src="https://picsum.photos/200/300?11" alt="photo11">
+        <img src="https://picsum.photos/200/300?12" alt="photo12">
+      </section>
+      </div>
+
+      <footer class="main-footer">
+        <p>©Dalila Iapichino 2022, All rights reserved.</p>
+
+        <p>
+          Special Thanks to
+          <a href="https://github.com/casiimir/cb4-lezioni">casiimir</a>
+          and <a href="https://edgemony.com/"> company.</a>
+        </p>
+      </footer>
+
+      <script src="./script.js" type="module"></script>
+      <script src="./utils.js" type="module"></script>
+      <script src="./api.js" type="module"></script>
+    </div>
   </body>
 </html>

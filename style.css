@@ -1,44 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap");
 
-html,
-body {
+html {
   margin: 0;
   font-size: 0.9rem;
   font-family: "Nunito";
 }
 
+body {
+  margin: 0;
+  height: 100%;
+}
+
 .main-header {
-  padding: 20px 0 20px 0;
-  margin-bottom: 25px;
+  width: 100%;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+}
+
+.main-logo {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo img {
   width: 70px;
 }
 
-.main-navbar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
 .title {
   padding: 25px;
-  color: darkorange;
+  color: #013a67;
   font-weight: bolder;
 }
 
+.filter-input {
+  margin-bottom: 25px;
+  height: 30px;
+  width: 300px;
+  background-color: white;
+  outline-color: #00b0a6;
+  border-color: #00b0a6;
+  text-align: center;
+}
+
 .main-content {
-  margin: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+  border-top: 3px #013a67 solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,11 +57,12 @@ body {
 
 .friends {
   padding: 25px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background: rgb(221, 221, 220);
-  color: rgb(76, 4, 85);
+  background: white;
+  color: white;
 }
 
 .friends img {
@@ -62,61 +74,83 @@ body {
 
 .friendCard {
   display: flex;
+  flex-direction: row;
+  flex-wrap: row wrap;
   align-items: center;
   gap: 20px;
-  width: 90%;
   padding: 20px 10px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
   font-weight: bold;
-  background: white;
+  background: #00b0a6;
+  border-radius: 15px;
 }
 
 .messages {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 50px;
-  width: 100%;
-  background: rgb(236, 235, 236);
 }
 
 .input-text {
-  height: 100px;
-  border: 1px rgb(142, 108, 140);
-  padding: 15px;
+  margin: 0 30px;
+  height: 40px;
+  border: 3px #00b0a6 solid;
+  padding: 10px;
   text-align: center;
+  outline-color: #055d6b;
 }
 
 .input-sender {
-  border: 1px rgb(142, 108, 140);
-  padding: 15px;
+  margin: 0 30px;
+  height: 5px;
+  border: 3px #00b0a6 solid;
+  padding: 10px;
   text-align: center;
+  outline-color: #055d6b;
 }
 
 .add-new-message {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 20px;
+  height: 130px;
+  gap: 8px;
+  padding: 30px 30px 0;
 }
 
 .add-new-message-btn {
-  color: rgb(253, 253, 253);
-  background-color: rgb(85, 33, 92);
-  border-color: transparent;
-  border-radius: 8px;
-}
-
-.filter-input {
-  margin: 0 20px;
-  border-color: transparent;
+  padding: 15px;
+  width: 200px;
+  font-size: 16px;
+  background-color: #00b0a6;
+  box-shadow: 0 4px 15px 0 rgba(17, 161, 132, 0.75);
+  color: #fff;
+  cursor: pointer;
   text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 15px;
+  align-self: center;
 }
 
 .messageCard {
+  padding: 0 30px;
   display: flex;
   flex-direction: column;
-  border: 2px rgb(223, 222, 222) solid;
-  padding: 0 20px;
+  background-color: #fff;
+  border: 2px #00b0a6 solid;
+  color: #008089;
+}
+
+.messageCard :first-child {
+  font-weight: 700;
+  color: #013a67;
+}
+
+.messageCard :last-child {
+  color: #00b0a6;
+  font-size: smaller;
+  font-style: italic;
 }
 
 .messages-list {
@@ -126,38 +160,62 @@ body {
   gap: 20px;
 }
 
-.empty {
+.gallery {
   width: 100%;
+  padding: 20px 0 20px;
   background: rgb(221, 221, 220);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.main-footer {
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+  background: #055d6b;
+  color: white;
+  font-size: 0.7em;
+  text-align: center;
+}
+
+.main-footer a {
+  color: white;
 }
 
 @media only screen and (min-width: 768px) {
-  .body .main-header {
-    justify-content: start;
+  body {
+    height: 100vh;
   }
 
-  .body {
-    margin: 0;
-  }
-
-  .logo img {
-    width: 150%;
-  }
-
-  .main-header ul {
-    flex-direction: row;
-    gap: 50px;
-    font-weight: 400;
-  }
-
-  .main-navbar {
+  .main-header {
     width: calc(100% - 180px);
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 30px;
   }
 
+  .main-logo {
+    flex-direction: row;
+  }
+
+  .logo img {
+    width: 70px;
+  }
+
+  .filter-input {
+    margin: 0;
+  }
+
   .main-content {
+    height: 710px;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -165,14 +223,38 @@ body {
 
   .friends {
     width: 25%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+
+  .messages-list {
+    overflow-y: auto;
+    scroll-behavior: smooth;
   }
 
   .messages {
+    height: 710px;
     width: 33%;
     flex-grow: 1;
+    background-color: white;
   }
 
-  .empty {
+  .gallery {
     width: 25%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: row wrap;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+
+  .main-footer {
+    position: absolute;
+    margin-top: 30px;
+    width: 100%;
+    height: 90px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
   }
 }
