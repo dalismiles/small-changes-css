@@ -24,13 +24,24 @@ GET("https://edgemony-backend.herokuapp.com/friends").then((friendList) => {
 });
 
 // Messages
-GET("https://edgemony-backend.herokuapp.com/messages").then((messagesList) => {
-  messagesList
-    .reverse()
-    .map(({ text, sender, date }) =>
-      createMessageEl(messagesListEl, text, sender, date)
-    ); // Questo è identico a quello che succede in riga 11
-});
+GET("https://edgemony-backend.herokuapp.com/messages")
+  .then((messagesList) => {
+    messagesList
+      .reverse()
+      .map(({ id, text, sender, date }) =>
+        createMessageEl(messagesListEl, id, text, sender, date)
+      ); // Questo è identico a quello che succede in riga 11
+  })
+  .then(() =>
+    messagesListEl.childNodes.forEach((message) =>
+      message.addEventListener("click", () =>
+        DELETE(
+          "https://edgemony-backend.herokuapp.com/messages",
+          message.id
+        ).then(() => location.reload())
+      )
+    )
+  );
 
 inputTextEl.addEventListener(
   "input",
@@ -54,8 +65,8 @@ addMsgBtn.addEventListener("click", () => {
         (messagesList) => {
           messagesList
             .reverse()
-            .map(({ text, sender, date }) =>
-              createMessageEl(messagesListEl, text, sender, date)
+            .map(({ id, text, sender, date }) =>
+              createMessageEl(messagesListEl, id, text, sender, date)
             );
         }
       )
@@ -74,9 +85,9 @@ filterInput.addEventListener("input", (e) => {
         .filter((message) =>
           message.sender.toLowerCase().includes(e.target.value.toLowerCase())
         )
-        .map(({ text, sender, date }) =>
-          createMessageEl(messagesListEl, text, sender, date)
-        ); // Questo è identico a quello che succede in riga 11
+        .map(({ id, text, sender, date }) =>
+          createMessageEl(messagesListEl, id, text, sender, date)
+        );
     }
   );
 });

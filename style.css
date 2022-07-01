@@ -49,7 +49,7 @@ body {
 }
 
 .main-content {
-  border-top: 3px #013a67 solid;
+  border-top: 3px #055d6b solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,19 +95,20 @@ body {
 .input-text {
   margin: 0 30px;
   height: 40px;
-  border: 3px #00b0a6 solid;
   padding: 10px;
-  text-align: center;
+  border: 3px #00b0a6 solid;
+  border-radius: 15px;
   outline-color: #055d6b;
 }
 
 .input-sender {
   margin: 0 30px;
   height: 5px;
-  border: 3px #00b0a6 solid;
   padding: 10px;
-  text-align: center;
+  border: 3px #00b0a6 solid;
+  border-radius: 10px;
   outline-color: #055d6b;
+  text-align: center;
 }
 
 .add-new-message {
@@ -139,7 +140,26 @@ body {
   flex-direction: column;
   background-color: #fff;
   border: 2px #00b0a6 solid;
+  border-radius: 15px;
   color: #008089;
+  cursor: pointer;
+}
+
+.messageCard:hover {
+  transform: translate(0, -5px);
+  background-color: #00b0a70f;
+}
+
+.messageCard:hover span {
+  display: none;
+}
+
+.messageCard:hover:before {
+  content: "Delete this post";
+  padding: 15px;
+  display: flex;
+  align-self: flex-end;
+  font-weight: bold;
 }
 
 .messageCard :first-child {
@@ -163,7 +183,7 @@ body {
 .gallery {
   width: 100%;
   padding: 20px 0 20px;
-  background: rgb(221, 221, 220);
+  background: #00b0a70f;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -171,10 +191,17 @@ body {
   gap: 25px;
 }
 
+.img-gallery {
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
 .main-footer {
   padding: 10px;
   bottom: 0;
   width: 100%;
+  position: fixed;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -215,10 +242,12 @@ body {
   }
 
   .main-content {
-    height: 710px;
+    height: 720px;
     display: flex;
     flex-direction: row;
     width: 100%;
+
+    margin-bottom: 25px;
   }
 
   .friends {
@@ -233,7 +262,7 @@ body {
   }
 
   .messages {
-    height: 710px;
+    height: 720px;
     width: 33%;
     flex-grow: 1;
     background-color: white;
@@ -249,7 +278,6 @@ body {
   }
 
   .main-footer {
-    position: absolute;
     margin-top: 30px;
     width: 100%;
     height: 90px;

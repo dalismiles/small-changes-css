@@ -37,7 +37,7 @@ const createFriendEl = (parent, name, photo) => {
   parent.appendChild(wrapper);
 };
 
-const createMessageEl = (parent, text, sender, date) => {
+const createMessageEl = (parent, id, text, sender, date) => {
   const wrapper = c("div");
   const textPar = c("p");
   const senderPar = c("p");
@@ -48,6 +48,8 @@ const createMessageEl = (parent, text, sender, date) => {
   senderPar.textContent = sender;
   dataPar.textContent = date;
   dataPar.textContent = date.split("T")[0].split("-").reverse().join("-");
+
+  wrapper.setAttribute("id", id);
 
   wrapper.append(textPar, senderPar, dataPar);
   parent.appendChild(wrapper);
